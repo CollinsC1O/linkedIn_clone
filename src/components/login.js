@@ -5,7 +5,7 @@ const Login = (props) => {
         <Container>
             <Nav>
                 <a href="/">
-                    <img src="/images/login_logo.png" alt="Home" />
+                    <img src="/images/side_logo.png" alt="Home" />
                 </a>
                 <div>
                     <Join>
@@ -19,7 +19,14 @@ const Login = (props) => {
             <Section>
                 <Hero>
                     <h1>Welcome to your professional community</h1>
+                    <img src="/images/centerImg.jpeg.png" alt="center/side-img" />
                 </Hero>
+                <Form>
+                    <Google>
+                        <img src="" alt="google-img" /> 
+                        Sign in with Google 
+                    </Google>
+                </Form>
             </Section>
         </Container>
     )
@@ -113,6 +120,50 @@ const  Hero = styled.div `
             width: 100%;
             line-height: 2;
         }
+    }
+
+    img{
+        /* z-index: -1; */
+        width: 700px;
+        height: 670px;
+        position: absolute;
+        bottom: -2px;
+        right: -150px;
+        @media (max-width: 768px){
+            top: 230px;
+            width: initial;
+            position: initial;
+            height: initial;
+        }
+    }
+`;
+const Form = styled.div`
+    margin-top: 100px;
+    width: 480px;
+    @media (max-width: 768px) {
+        margin-top: 20px;
+    }
+`
+
+const Google = styled.button`
+    display: flex;
+    justify-content: center;
+    background-color: #fff;
+    align-items: certer;
+    height: 56px;
+    width: 100%;
+    border-radius: 28px;
+    box-shadow: inset 0 0 0 1px rgba(0 0 0 / 60),
+        inset 0 0 0 2px rgb(0 0 0 / 0%) inset 0 0 0 1px rgb(0 0 0 / 0); //generate it from box shadow generator
+    vertical-align: middle;
+    z-index: 0;
+    transition-duration: 167ms;
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.6);
+    &:hover{
+        background-color: rgba(207, 207, 207, 0.25);
+        color: rgba(0, 0, 0, 0.75);
+        
     }
 `
 export default Login;
