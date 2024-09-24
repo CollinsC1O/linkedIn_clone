@@ -7,9 +7,7 @@ function App() {
     <div className="App">
       <Router>
         <Routes>
-          <Route expect path = '/'> 
-            <Login />
-          </Route>
+          <Route path="/" element={<Login />} />
         </Routes>
       </Router>
     </div>
@@ -17,6 +15,7 @@ function App() {
 }
 
 export default App;
+
 
 // import { BrowserRouter, Router, Routes, Route } from 'react-router-dom';
 // import './App.css';
