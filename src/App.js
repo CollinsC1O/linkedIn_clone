@@ -29,9 +29,16 @@ function App() {
     <div className="App">
       <Router>
         <Routes>
-          {/* <Route path="/" element={<Login />} />
-          <Route path="/Home" element={<Home />} /> */}
-          <Route path="/" element={<Header />} />
+          {/* {/* <Route path="/" element={<Login />} />
+          <Route path="/Home" element={<Home />} /> 
+          <Route path="/" element={<Header />} /> */}
+          <Route exact path="/">
+            <Login />
+          </Route>
+          <Route path="/home">
+            <Header />
+            <Home />
+          </Route>
         </Routes>
       </Router>
     </div>

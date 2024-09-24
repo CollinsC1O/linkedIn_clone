@@ -6,7 +6,7 @@ const Header = (props) => {
             <Content>
                 <Logo>
                     <a href="/home">
-                        <img src="/images/home_logo.png" alt="home-logo.svg" />
+                    <img src="/images/home-logo.svg" alt="home-logo" />
                     </a>
                 </Logo>
                 <Search>
@@ -22,8 +22,60 @@ const Header = (props) => {
                         <NavList>
                             <a>
                                 <img src="/images/nav-home.svg" alt="nav-home-icon" srcset=""/>
+                                <span>Home</span>
                             </a>
                         </NavList>
+
+                        <NavList>
+                            <a>
+                                <img src="/images/nav-network.svg" alt="nav-network" />
+                                <span>My Network</span>
+                            </a>
+                        </NavList>
+
+                        <NavList>
+                            <a>
+                                <img src="/images/nav-jobs.svg" alt="nav-jobs" />
+                                <span>Jobs</span>
+                            </a>
+                        </NavList>
+
+                        <NavList>
+                            <a>
+                                <img src="/images/nav-messaging.svg" alt="" />
+                                <span>Messaging</span>
+                            </a>
+                        </NavList>  
+
+                        <NavList>
+                            <a>
+                                <img src="/images/nav-notifications.svg" alt="" />
+                                <span>Notifications</span>
+                            </a>
+                        </NavList>    
+
+                        <User>
+                            <a>
+                                <img src="/images/user.svg" alt="" />
+                                <span>Me</span>
+                                <img src="/images/down-icon.svg" alt="" />
+                            </a>
+
+                            <SignOut>
+                                <a>Sign Out</a>
+                            </SignOut>
+                        </User>          
+
+                        <Work>
+                            <a>
+                                <img src="/images/nav-work.svg" alt="" />
+                                <span>
+                                Work
+                                <img src="/images/down-icon.svg" alt="" />
+                                </span>
+                            </a>
+                        </Work>        
+
                     </NavListWrap>
                 </Nav>
             </Content>
@@ -122,7 +174,38 @@ const NavList = styled.li`
         min-width: 80px;
         position: relative;
         text-decoration: none;
+
+        span {
+            color: rgba(0, 0, 0, 0.6);
+            display: flex;
+            align-items: center;
+        }
+
+        @media (max-width: 768px){
+            min-width: 70px;
+        }
+
+        &:hover, &:active {
+            a{
+                span{
+                    color: rgba(0, 0, 0, 0.9);
+                }
+            }
+        }
         
     }
-`
+`;
+
+const User = styled.a`
+
+`;
+
+const SignOut = styled.a`
+    
+`;
+
+const Work = styled.a`
+    
+`;
+
 export default Header;
