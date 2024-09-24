@@ -4,9 +4,11 @@ const Login = (props) => {
     return(
         <Container>
             <Nav>
+
                 <a href="/">
                     <img src="/images/side_logo.png" alt="Home" />
                 </a>
+
                 <div>
                     <Join>
                         Join now
@@ -19,12 +21,12 @@ const Login = (props) => {
             <Section>
                 <Hero>
                     <h1>Welcome to your professional community</h1>
-                    <img src="/images/centerImg.jpeg.png" alt="center/side-img" />
+                    <img src="/images/centerImg.jpeg" alt="center/side-img" />
                 </Hero>
                 <Form>
                     <Google>
-                        <img src="" alt="google-img" /> 
-                        Sign in with Google 
+                        <img src="/images/google.svg" alt="google-img" /> 
+                        <span>Sign in with Google</span>
                     </Google>
                 </Form>
             </Section>
@@ -44,6 +46,9 @@ const Nav = styled.nav`
     position: relative;
     justify-content: space-between;
     flex-wrap: nowrap;
+    a, img {
+        width: 250px;
+    }
     & > a{
         width: 135px;
         height: 34px;
@@ -66,7 +71,6 @@ const Join = styled.a`
         background-color: rgba(0, 0, 0, 0.08);
         color: rgba(0, 0, 0, 0.9);
         text-decoration: none;
-
     }
     
 `
@@ -124,11 +128,13 @@ const  Hero = styled.div `
 
     img{
         /* z-index: -1; */
-        width: 700px;
-        height: 670px;
+        width: 300px;
+        height: 370px;
         position: absolute;
         bottom: -2px;
         right: -150px;
+        top: 0;
+        margin-right: 100px;
         @media (max-width: 768px){
             top: 230px;
             width: initial;
@@ -160,10 +166,14 @@ const Google = styled.button`
     transition-duration: 167ms;
     font-size: 20px;
     color: rgba(0, 0, 0, 0.6);
+    span{
+        padding: 13px 10px;
+    }
     &:hover{
         background-color: rgba(207, 207, 207, 0.25);
         color: rgba(0, 0, 0, 0.75);
         
     }
+
 `
 export default Login;

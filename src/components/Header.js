@@ -197,7 +197,7 @@ const NavList = styled.li`
 `;
 
 const User = styled.a`
-
+    width: px;
 `;
 
 const SignOut = styled.a`
