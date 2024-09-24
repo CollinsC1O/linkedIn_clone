@@ -14,9 +14,18 @@ const Header = (props) => {
                         <input type="text" placeholder="Search" />
                     </div>
                     <SearchIcon>
-                        <img src="" alt="search-icon" />
+                        <img src="/images/search-icon.svg" alt="search-icon" />
                     </SearchIcon>
                 </Search>
+                <Nav>
+                    <NavListWrap>
+                        <NavList>
+                            <a>
+                                <img src="/images/nav-home.svg" alt="nav-home-icon" srcset=""/>
+                            </a>
+                        </NavList>
+                    </NavListWrap>
+                </Nav>
             </Content>
         </Container>
     );
@@ -76,7 +85,44 @@ const SearchIcon = styled.div`
     pointer-events: none;
     display: flex;
     justify-content: center;
-    align-items: center;
-    
+    align-items: center;    
 `;
+
+const Nav = styled.nav`
+    margin-left: auto;
+    display: block;
+    @media (max-width: 768px) {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        background: white;
+        width: 100%;
+
+    }
+`
+const NavListWrap = styled.ul`
+    display: flex;
+    flex-wrap: nowrap;
+    list-style-type: none;
+`
+
+const NavList = styled.li`
+    display: flex;
+    align-items: center;
+    a{
+        align-items: center;
+        background: transperent;
+        display: flex;
+        flex-direction: column;
+        font-size: 12px;
+        font-weight: 400;
+        justify-content: center;
+        line-height: 1.5;
+        min-height: 42px;
+        min-width: 80px;
+        position: relative;
+        text-decoration: none;
+        
+    }
+`
 export default Header;
