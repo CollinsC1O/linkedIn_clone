@@ -11,7 +11,7 @@ const Login = (props) => {
 
                 <div>
                     <Join>
-                        Join now
+                        <a href="/component">Join now</a>
                     </Join>
                     <SignIn>
                         SignIn
@@ -128,13 +128,14 @@ const  Hero = styled.div `
 
     img{
         /* z-index: -1; */
-        width: 300px;
-        height: 370px;
+        width: 400px;
+        height: 400px;
         position: absolute;
         bottom: -2px;
         right: -150px;
         top: 0;
         margin-right: 100px;
+        border-radius: 5px;
         @media (max-width: 768px){
             top: 230px;
             width: initial;

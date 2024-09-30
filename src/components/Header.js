@@ -19,7 +19,7 @@ const Header = (props) => {
                 </Search>
                 <Nav>
                     <NavListWrap>
-                        <NavList>
+                        <NavList class="active">
                             <a>
                                 <img src="/images/nav-home.svg" alt="nav-home-icon" srcset=""/>
                                 <span>Home</span>
@@ -77,7 +77,7 @@ const Header = (props) => {
                         </Work>        
 
                     </NavListWrap>
-                </Nav>
+                </Nav> 
             </Content>
         </Container>
     );
@@ -90,10 +90,10 @@ const Container = styled.div`
     padding: 0 24px;
     position: fixed;
     top: 0;
+    width: 100vw;
     z-index: 100;
-    width: 100px; // check width to confirm
-    
 `;
+
 const Content = styled.div`
     display: flex;
     align-items: center;
@@ -101,11 +101,12 @@ const Content = styled.div`
     min-height: 100%;
     max-width: 1128px;
 `;
+
 const Logo = styled.span`
     margin-right: 8px;
     font-size: 0px;
-
 `;
+
 const Search = styled.div`
     opacity: 1;
     flex-grow: 1;
@@ -123,6 +124,7 @@ const Search = styled.div`
             height: 34px;
             border-color: #dce6f1;
             vertical-align: text-top;
+            line-height: 1.75;
         }
     }
 `;
@@ -156,7 +158,22 @@ const NavListWrap = styled.ul`
     display: flex;
     flex-wrap: nowrap;
     list-style-type: none;
-`
+
+    .active{
+        span:after{
+            content:"";
+            transform: scaleX(1);
+            border-bottom: 2px solid var(--white, fff);
+            bottom: 0;
+            left: 0;
+            position: absolute;
+            transition: transform 0.2 ease-in-out;
+            width: 100%;
+            border-color: rgba(0,0,0,0.9);
+            
+        }
+    }
+`;
 
 const NavList = styled.li`
     display: flex;
@@ -171,7 +188,7 @@ const NavList = styled.li`
         justify-content: center;
         line-height: 1.5;
         min-height: 42px;
-        min-width: 80px;
+        min-width: 88px;
         position: relative;
         text-decoration: none;
 
@@ -194,18 +211,50 @@ const NavList = styled.li`
         }
         
     }
-`;
+    `;
 
-const User = styled.a`
-    width: px;
-`;
-
-const SignOut = styled.a`
+    const SignOut = styled.div`
+        position: absolute;
+        top: 45px;
+        background: white;
+        border-radius: 0 0 5px 5px;
+        width: 108px;
+        height: 40px;
+        font-size: 16px;
+        transition-duration: 167ms;
+        text-align: center;
+        display: none;
+    `;
     
+const User = styled(NavList)`
+    a > svg{
+        width: 24px;
+        border-radius: 50%;
+    }
+
+    a > img{
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+    }
+    
+    span{
+        display: flex;
+        align-items: center;
+    }
+
+    &:hover{
+        ${SignOut}{
+            align-items: center;
+            justify-content: center;
+            display: flex;
+        }
+    }
 `;
 
-const Work = styled.a`
-    
+const Work = styled(User)`
+    border-left: 1px solid rgba(0,0,0,0.88);
 `;
+
 
 export default Header;
